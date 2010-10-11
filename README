@@ -1,0 +1,86 @@
+/**
+ * chess
+ * 
+ * Electric Textiles, LLC.
+ * Berkely FreeBSD 3-clause License
+ */
+
+//Name: Thomson Comer
+//Class: cs410 mwf9:00a
+//Assignment #3, addition of piece movement and textures to game board assignment #2.
+
+texture.h and texture.cpp acquired from http://www.spacesimulator.net/tut3_texturemapping.html/
+Written originally by Damiano Vitulli and ported for MAC OSX by Karakoussis Apostolos, it is
+essentially a binary .bmp image reader with simple texture commands to add the .bmp files to
+OpenGL. Using it I was able to add two textures to my program with little trouble.
+
+The board pieces are each textured with a marble color for the black and white pieces (marbblack.bmp
+and marbwhite.bmp). They are rotated randomly at system initialization to provide a more natural
+look to the board.
+
+Pieces are moved by clicking on a piece during translate mode and clicking on an unoccupied board
+square. When a piece is moving, the board can be rotated but transforming the viewpoint or selecting
+other pieces have been disabled.
+
+The description of game functionality from assignment #2 is left below as it is still pertinent
+to Assignment #3.
+
+Quick key reference chart below.
+
+Description of game functionality:
+
+Camera:
+Rotation is controlled with the right mouse button by clicking and dragging.
+Zoom is controlled by < and >.
+Look position is controlled by left mouse button when an item is picked but chess piece placement
+modes are not active, by clicking and dragging.
+
+Lights:
+Lights are controlled in pre-set positions around the game board using the 0-7 keys.
+The light colors can be adjusted by the user by selecting a particular light and pressing
+the a,s, and d keys in order to change ambient, spectral, and diffuse values for those particular
+lights. The values are controlled for R, G, and B by using the keys u, i, and o on the keyboard.
+Lower case u-o increases the color value for the respective color, upper case decreases it.
+
+Piece placement:
+Chess pieces are selected with the z through b keys along the bottom row of the keyboard. As shown
+in the user interface, capital letters in that range add green chess pieces while lower case letters
+add the red chess pieces. The spacebar can also be used to seed the entire board with a properly
+positioned board for easy observation, as well as remove the seeding. Be careful about seeding the board
+when you have already placed pieces in the start area - they will be overdrawn.
+
+Each piece was drawn by myself in blender, except for the monkey heads used for the knight pieces which
+are courtesy of primitives available in the blender rendering engine. With Dr. Draper's advice I constructed
+the routine to read in Videoscape files from blender into my program for the chess pieces.
+
+Quick key reference:
+<------------------>
+view
+----
+Left mouse: Translate by dragging objects, pick objects, add and remove any chess piece.
+Right mouse: Rotate board inside of view point.
+<: zoom in.
+>: zoom out.
+
+lighting
+--------
+0-7: enable/disable and select lights 0 through 7
+a: select ambient lighting adjustment mode
+s: select specular lighting adjustment mode
+d: select diffuse lighting adjustment mode
+u: increase red in given color lighting mode
+U: decrease red *
+i: increase green in given color lighting mode
+I: decrease green *
+o: increase blue in given color lighting mode
+O: decrease blue *
+
+pieces
+------
+space: seed entire board with chess layout and remove seeding
+z,Z: add red, green pawn to picked location
+x,X: add red, green rook to picked location
+c,C: add red, green monkey to picked location
+v,V: add red, green bishop to picked location
+b,B: add red, green queen to picked location
+n,N: add red, green king to picked location.

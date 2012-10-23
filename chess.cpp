@@ -265,10 +265,10 @@ void display()
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 	gluLookAt(camPosition.x,camPosition.y,camPosition.z,lookAt.x,lookAt.y,lookAt.z,vup.x,vup.y,vup.z);
-    glTranslatef( mouse.MouseUpdate.Translation.x , mouse.MouseUpdate.Translation.y , mouse.MouseUpdate.Translation.z );	
-    scene::spin = scene::spin + mouse.MouseUpdate.Rotation;
-    mouse.ClearUpdate();
-    scene::spin.etVectorSummary("Spin: ");    
+   glTranslatef( mouse.MouseUpdate.Translation.x , mouse.MouseUpdate.Translation.y , mouse.MouseUpdate.Translation.z );	
+   scene::spin = scene::spin + mouse.MouseUpdate.Rotation;
+   mouse.ClearUpdate();
+   scene::spin.etVectorSummary("Spin: ");    
 	glRotatef(scene::spin.x,0,1,0);
 	glRotatef(scene::spin.y,1,0,0);
 	drawAll(GL_RENDER);

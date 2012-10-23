@@ -3,27 +3,15 @@
  * 
  * Electric Textiles, LLC.
  * Berkely FreeBSD 3-clause License
+ * Based on a program written in 2005 for Dr. Bruce Draper's CS 410 - Computer Graphics course
+ * at Colorado State University.
  */
 
-//Name: Thomson Comer
-//Class: cs410 mwf9:00a
-//Assignment #3, addition of piece movement and textures to game board assignment #2.
+texture.h and texture.cpp acquired from http://www.spacesimulator.net/tut3_texturemapping.html/ Written originally by Damiano Vitulli and ported for MAC OSX by Karakoussis Apostolos, it is essentially a binary .bmp image reader with simple texture commands to add the .bmp files to OpenGL.
 
-texture.h and texture.cpp acquired from http://www.spacesimulator.net/tut3_texturemapping.html/
-Written originally by Damiano Vitulli and ported for MAC OSX by Karakoussis Apostolos, it is
-essentially a binary .bmp image reader with simple texture commands to add the .bmp files to
-OpenGL. Using it I was able to add two textures to my program with little trouble.
+The board pieces are each textured with a marble color for the black and white pieces (marbblack.bmp and marbwhite.bmp). They are rotated randomly at system initialization to provide a more natural look to the board.
 
-The board pieces are each textured with a marble color for the black and white pieces (marbblack.bmp
-and marbwhite.bmp). They are rotated randomly at system initialization to provide a more natural
-look to the board.
-
-Pieces are moved by clicking on a piece during translate mode and clicking on an unoccupied board
-square. When a piece is moving, the board can be rotated but transforming the viewpoint or selecting
-other pieces have been disabled.
-
-The description of game functionality from assignment #2 is left below as it is still pertinent
-to Assignment #3.
+Pieces are moved by clicking on a piece during translate mode and clicking on an unoccupied board square. When a piece is moving, the board can be rotated but transforming the viewpoint or selecting other pieces have been disabled.
 
 Quick key reference chart below.
 
@@ -48,10 +36,6 @@ in the user interface, capital letters in that range add green chess pieces whil
 add the red chess pieces. The spacebar can also be used to seed the entire board with a properly
 positioned board for easy observation, as well as remove the seeding. Be careful about seeding the board
 when you have already placed pieces in the start area - they will be overdrawn.
-
-Each piece was drawn by myself in blender, except for the monkey heads used for the knight pieces which
-are courtesy of primitives available in the blender rendering engine. With Dr. Draper's advice I constructed
-the routine to read in Videoscape files from blender into my program for the chess pieces.
 
 Quick key reference:
 <------------------>

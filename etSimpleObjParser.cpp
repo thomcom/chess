@@ -6,7 +6,7 @@ etSimpleObjParser::etSimpleObjParser(string file)
 	ifstream infile;
 	VertCount = 0;
 	QuadCount = 0;
-	triangleVertCount = 0;
+	TriangleCount = 0;
 	vertices = NULL;
 	quads = NULL;
 	triangles = NULL;
@@ -33,7 +33,7 @@ int etSimpleObjParser::CloseFile()
 void etSimpleObjParser::BuildMesh()
 {
 	QuadCount = 0;
-	triangleVertCount = 0;
+	TriangleCount = 0;
 	
 	openFile();
 	
@@ -85,14 +85,14 @@ void etSimpleObjParser::BuildMesh()
 		}
 		else if( garbage=="3" )
 		{
-//			temptriangles[triangleVertCount * 3] = 3;
-			infile >> temptriangles[triangleVertCount * 3 + 0] >>
-				temptriangles[triangleVertCount * 3 + 1] >>
-				temptriangles[triangleVertCount * 3 + 2];
-//			cout << temptriangles[triangleVertCount * 3 + 0] << " " <<
-//				temptriangles[triangleVertCount * 3 + 1] << " " <<
-//				temptriangles[triangleVertCount * 3 + 2] << endl;
-			triangleVertCount++;
+//			temptriangles[TriangleCount * 3] = 3;
+			infile >> temptriangles[TriangleCount * 3 + 0] >>
+				temptriangles[TriangleCount * 3 + 1] >>
+				temptriangles[TriangleCount * 3 + 2];
+//			cout << temptriangles[TriangleCount * 3 + 0] << " " <<
+//				temptriangles[TriangleCount * 3 + 1] << " " <<
+//				temptriangles[TriangleCount * 3 + 2] << endl;
+			TriangleCount++;
 		}
 		infile >> garbage;
 	}
@@ -103,8 +103,8 @@ void etSimpleObjParser::BuildMesh()
 //		cout << quads[i] << " ";
 //		if(i%4==3) cout << endl;
 	}
-	triangles = new int[triangleVertCount*3];
-	for(int i=0;i<triangleVertCount*3;i++)
+	triangles = new int[TriangleCount*3];
+	for(int i=0;i<TriangleCount*3;i++)
 	{
 		triangles[i]=temptriangles[i];
 //		cout << triangles[i] << " ";

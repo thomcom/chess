@@ -93,12 +93,12 @@ etMouse mouse;
 
 enum Mode
 {
-    CAMERA;
-    OBJECT;
-    PIECE;
-    COLOR;
-    LIGHT;
-}
+    CAMERA,
+    OBJECT,
+    PIECE,
+    COLOR,
+    LIGHT
+};
 
 namespace engine
 {

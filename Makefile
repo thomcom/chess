@@ -1,14 +1,19 @@
 CC = g++
 FLAGS = -g -Wall -O
-INC = -I.
-LIBS = -framework OpenGL -framework GLUT
-#LIBS = -lGL -lglut
+INC = -I. -I/home/tcomer/miniconda3/include
+
+PLATFORM=$(shell uname)
+ifeq ($(PLATFORM),Darwin)
+LIBS=-framework OpenGL -framework GLUT
+else
+LIBS=-lGL -lglut -lGLU -L/home/tcomer/miniconda3/lib -LD_LIBRARY_PATH/home/tcomer/miniconda/lib3
+endif
 
 ##################################################
 # EXECUTABLES
 ##################################################
 chess: etMouse.o etTransform.o etMath.o etVector.o Mystack.o Vertices.o etSimpleObjParser.o Shapemove.o Movement.o texture.o chess.cpp defs.h
-	$(CC) $(FLAGS) etMouse.o etTransform.o etMath.o etVector.o Mystack.o Vertices.o etSimpleObjParser.o Shapemove.o Movement.o texture.o chess.cpp -o chess $(LIBS)
+	$(CC) $(FLAGS) $(INC) etMouse.o etTransform.o etMath.o etVector.o Mystack.o Vertices.o etSimpleObjParser.o Shapemove.o Movement.o texture.o chess.cpp -o chess $(LIBS)
 
 test: etMath.o etVector.o vectorTest.cpp
 	$(CC) $(FLAGS) etMath.o etVector.o vectorTest.cpp -o test

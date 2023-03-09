@@ -33,8 +33,8 @@ private:
     /***********************************
     * MODIFIERS
     ************************************/
-    const static float ROTATION_INCREMENT      = 0.2f;
-    const static float TRANSLATION_INCREMENT   = 0.05f;
+    constexpr const static float ROTATION_INCREMENT      = 0.2f;
+    constexpr const static float TRANSLATION_INCREMENT   = 0.05f;
     
     /***********************************
     * ACCESSORS

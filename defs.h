@@ -1,8 +1,8 @@
 #ifndef _defs
 #define _defs
 
-//#include <GL/glut.h>
-#include <GLUT/glut.h>
+#include <GL/freeglut.h>
+//#include <GLUT/glut.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>

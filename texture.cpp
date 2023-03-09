@@ -34,8 +34,8 @@ of course you may need to change the makefile
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <GLUT/glut.h>
-#include <OpenGL/glu.h>
+#include <GL/freeglut.h>
+#include <GL/glu.h>
 #include "texture.h"        
 
 
